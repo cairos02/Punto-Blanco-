@@ -8,68 +8,71 @@
     <!-- estilos embebidos (mobile-first) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root{
             /* Black & Red palette */
-            --bg: #000000;
-            --surface: #0b0b0b;
-            --card: #0f0f0f;
-            --text: #ffffff;
-            --muted: #d1c7c5;
-            --accent: #c62828;
-            --accent-2: #8e0f0f;
-            --accent-3: #ff5252;
+            --bg: #060606;
+            --surface: #101010;
+            --card: #161616;
+            --text: #f7f3ef;
+            --muted: #b8b0aa;
+            --accent: #db1f1f;
+            --accent-2: #a70f0f;
+            --accent-3: #ff4d4d;
             --white: #ffffff;
-            --radius:14px;
-            --shadow: 0 8px 30px rgba(0,0,0,0.6);
-            --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.6);
+            --radius:18px;
+            --shadow: 0 12px 34px rgba(0,0,0,0.6);
+            --shadow-lg: 0 22px 60px rgba(0, 0, 0, 0.7);
         }
 
         *{box-sizing:border-box}
         html{scroll-behavior:smooth}
         body{
-            margin:0; 
-            font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-            background:var(--bg);
+            margin:0;
+            font-family:'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background:radial-gradient(circle at top, #1a1a1a 0%, #050505 45%, #000000 100%);
             color:var(--text);
             -webkit-font-smoothing:antialiased;
             -moz-osx-font-smoothing:grayscale;
-            line-height:1.5;
+            line-height:1.75;
         }
 
         a{color:inherit}
 
-        .container{max-width:420px;margin:0 auto;padding:0 18px}
+        .container{max-width:420px;margin:0 auto;padding:0 20px}
 
         /* Header */
-        .topbar{padding:12px 0}
-        .brand{font-family:'Playfair Display', Georgia, serif;font-size:1.35rem;color:var(--accent-2);font-weight:700;display:inline-block}
+        .topbar{padding:18px 0}
+        .brand{font-family:'Montserrat', sans-serif;font-size:1.45rem;color:var(--accent-2);font-weight:700;display:inline-block;letter-spacing:0.06em}
         nav{display:flex;justify-content:space-between;align-items:center}
-        .nav-links{display:flex;gap:18px}
-        .nav-links a{font-weight:600;color:var(--muted);padding:8px;border-radius:8px}
-        .nav-links a:hover, .nav-links a:focus{background:var(--glass);outline:none}
+        .nav-links{display:flex;gap:16px}
+        .nav-links a{font-weight:600;color:var(--muted);padding:10px 12px;border-radius:12px;transition:background 0.2s ease}
+        .nav-links a:hover, .nav-links a:focus{background:rgba(255,255,255,0.06);outline:none}
 
         /* Hero */
         .hero{
             min-height: 60vh;
             background:
-                linear-gradient(90deg, rgba(20, 12, 8, 0.86), rgba(20, 12, 8, 0.65)),
+                linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.15)),
                 url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=80') center/cover;
             color: var(--white);
-            display: flex;align-items: center;padding:42px 0;border-bottom:1px solid rgba(255,255,255,0.04);
+            display: flex;
+            align-items: center;
+            padding:44px 0 36px;
+            border-bottom:1px solid rgba(255,255,255,0.08);
         }
         .hero-inner{display:flex;align-items:center;gap:20px}
         .hero-copy{max-width:100%}
-        .eyebrow{display:inline-block;color:var(--accent);text-transform:uppercase;letter-spacing:0.12em;font-weight:700;font-size:0.72rem;margin-bottom:10px}
-            .section-heading::after{content:"";display:block;width:64px;height:4px;background:var(--accent);margin:14px auto;border-radius:4px}
-            .section-heading h2{color:var(--accent)}
-            .menu-card h3{color:var(--accent)}
-            .contact-card h3.visit{color:var(--accent)}
-            .icon{display:inline-block;width:20px;text-align:center;margin-right:8px}
-        h1{font-family:'Playfair Display', serif;font-size:clamp(1.8rem,4vw,3rem);margin:0 0 14px}
-        .lead{font-size:1.05rem;opacity:0.95;margin-bottom:18px}
-        .actions{display:flex;gap:12px}
+        .eyebrow{display:inline-block;color:var(--accent);text-transform:uppercase;letter-spacing:0.18em;font-weight:700;font-size:0.75rem;margin-bottom:12px}
+        .section-heading::after{content:"";display:block;width:72px;height:4px;background:var(--accent);margin:16px auto;border-radius:4px}
+        .section-heading h2{color:var(--accent)}
+        .menu-card h3{color:var(--accent)}
+        .contact-card h3.visit{color:var(--accent)}
+        .icon{display:inline-block;width:20px;text-align:center;margin-right:10px}
+        h1{font-family:'Montserrat', sans-serif;font-size:clamp(2rem,4vw,3.2rem);margin:0 0 18px;line-height:1.05}
+        .lead{font-size:1rem;opacity:0.95;margin-bottom:20px;max-width:620px}
+        .actions{display:flex;flex-wrap:wrap;gap:12px}
         .btn{padding:10px 16px;border-radius:999px;font-weight:700;cursor:pointer;border:none}
         .btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent-3));color:var(--white)}
         .btn-ghost{background:rgba(255,255,255,0.18);color:#fff}
@@ -79,31 +82,36 @@
         .section-heading{text-align:center;margin-bottom:36px}
         .section-heading h2{font-family:'Playfair Display', serif;font-size:1.6rem;margin:6px 0}
         .section-heading p{max-width:760px;margin:0 auto;color:var(--muted)}
-        .category-nav{display:flex;gap:10px;overflow:auto;padding:10px 6px;margin:12px 0 18px}
-        .category-nav a{flex:0 0 auto;background:linear-gradient(135deg,var(--accent),var(--accent-2));border:1px solid transparent;color:var(--white);padding:10px 16px;border-radius:999px;font-weight:700;white-space:nowrap;box-shadow:var(--shadow)}
-        .category-nav a:focus,.category-nav a:hover{filter:brightness(0.94);outline:none}
+        .category-nav{display:flex;gap:10px;overflow:auto;padding:12px 8px;margin:16px 0 22px;border:1px solid rgba(255,255,255,0.07);border-radius:999px;background:rgba(255,255,255,0.03)}
+        .category-nav a{flex:0 0 auto;background:linear-gradient(135deg,var(--accent),var(--accent-2));border:1px solid transparent;color:var(--white);padding:10px 18px;border-radius:999px;font-weight:700;white-space:nowrap;box-shadow:var(--shadow);transition:transform 0.2s ease, filter 0.2s ease}
+        .category-nav a:focus,.category-nav a:hover{filter:brightness(0.95);transform:translateY(-1px);outline:none}
         .category-nav a.active{background:var(--accent-2);box-shadow:var(--shadow-lg)}
+
+        .menu-category{display:none}
+        .menu-category.active{display:block}
 
         /* Menu grid */
         .menu-tabs{display:none}
         .tab-btn{background:transparent;border:1px solid rgba(66,48,42,0.08);padding:8px 14px;border-radius:999px;font-weight:600;color:var(--muted)}
         .tab-btn.active{background:var(--accent-2);color:var(--white);border-color:transparent;box-shadow:var(--shadow-lg)}
 
-        .menu-grid{display:grid;grid-template-columns:1fr;gap:14px}
-        .menu-card{background:var(--card);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);position:relative;border:1px solid rgba(66,48,42,0.04)}
-        .menu-card h3{margin:0 0 8px;font-size:1.05rem}
-        .menu-card p{margin:0;color:var(--muted)}
-        .price{position:absolute;top:14px;right:14px;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:var(--white);padding:8px 12px;border-radius:999px;font-weight:800}
+        .menu-grid{display:grid;grid-template-columns:1fr;gap:16px}
+        .menu-card{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:flex-start;background:var(--card);border-radius:var(--radius);padding:20px;border:1px solid rgba(255,255,255,0.08);box-shadow:var(--shadow)}
+        .menu-card-content{display:flex;flex-direction:column;gap:8px}
+        .menu-card h3{margin:0;font-size:1.08rem;font-family:'Montserrat', sans-serif}
+        .menu-card p{margin:0;color:var(--muted);font-size:0.98rem;line-height:1.7}
+        .menu-card .allergens{font-size:0.9rem;color:var(--accent);font-weight:600;letter-spacing:0.02em;text-transform:uppercase}
+        .price{position:static;background:transparent;color:var(--white);font-size:1.1rem;font-weight:800;text-align:right;padding:0;white-space:nowrap}
 
         /* About & Contact */
         .about{display:grid;grid-template-columns:1fr;gap:18px;align-items:center}
-        .about img{width:100%;height:100%;object-fit:cover;border-radius:12px}
-        .contact-grid{display:grid;grid-template-columns:1fr;gap:12px}
-        .contact-card{background:linear-gradient(135deg,var(--accent-2),var(--accent));color:#fff;padding:20px;border-radius:12px}
+        .about img{width:100%;height:100%;object-fit:cover;border-radius:18px;box-shadow:0 16px 40px rgba(0,0,0,0.35)}
+        .contact-grid{display:grid;grid-template-columns:1fr;gap:16px}
+        .contact-card{background:linear-gradient(135deg,var(--accent-2),var(--accent));color:#fff;padding:24px;border-radius:18px;box-shadow:var(--shadow)}
 
-        footer{padding:18px 0;background:var(--surface);margin-top:30px}
-        .footer-inner{display:flex;flex-direction:column;align-items:center;gap:8px}
-        .small{font-size:0.86rem;color:var(--muted)}
+        footer{padding:24px 0;background:var(--surface);margin-top:30px}
+        .footer-inner{display:flex;flex-direction:column;align-items:center;gap:10px}
+        .small{font-size:0.9rem;color:var(--muted);opacity:0.9}
 
         @media (max-width:900px){.menu-grid{grid-template-columns:1fr}.about{grid-template-columns:1fr}.hero-inner{flex-direction:column;align-items:flex-start}}
         @media (max-width:640px){.nav-links{display:none}.container{padding:0 16px}.menu-grid{grid-template-columns:1fr}}
@@ -173,31 +181,43 @@
                 </nav>
 
                 <!-- Menu organized by category -->
-                <div class="menu-category">
+                <div class="menu-category active">
                     <h3 id="tapas" class="category-title">Tapas</h3>
                     <div class="menu-grid">
                         <article class="menu-card" data-category="tapas">
+                            <div class="menu-card-content">
+                                <h3>Papas locas</h3>
+                                <p>Con 3 salsas, jamón, queso y pollo desmenuzado.</p>
+                                <span class="allergens">Alérgenos: gluten, huevo, lácteos</span>
+                            </div>
                             <div class="price">6,70 €</div>
-                            <h3>Papas locas</h3>
-                            <p>Con 3 salsas, jamón, queso y pollo desmenuzado.</p>
                         </article>
 
                         <article class="menu-card" data-category="tapas">
+                            <div class="menu-card-content">
+                                <h3>Tequeños</h3>
+                                <p>6 unidades.</p>
+                                <span class="allergens">Alérgenos: gluten, lácteos</span>
+                            </div>
                             <div class="price">6,80 €</div>
-                            <h3>Tequeños</h3>
-                            <p>6 unidades.</p>
                         </article>
 
                         <article class="menu-card" data-category="tapas">
+                            <div class="menu-card-content">
+                                <h3>Croquetas</h3>
+                                <p>8 unidades.</p>
+                                <span class="allergens">Alérgenos: gluten, huevo, lácteos</span>
+                            </div>
                             <div class="price">6,80 €</div>
-                            <h3>Croquetas</h3>
-                            <p>8 unidades.</p>
                         </article>
 
                         <article class="menu-card" data-category="tapas">
+                            <div class="menu-card-content">
+                                <h3>Queso asado</h3>
+                                <p>Con mojos y arándanos.</p>
+                                <span class="allergens">Alérgenos: lácteos</span>
+                            </div>
                             <div class="price">6,80 €</div>
-                            <h3>Queso asado</h3>
-                            <p>Con mojos y arándanos.</p>
                         </article>
                     </div>
                 </div>
@@ -206,27 +226,39 @@
                     <h3 id="hamburguesas" class="category-title">Hamburguesas</h3>
                     <div class="menu-grid">
                         <article class="menu-card" data-category="hamburguesas">
+                            <div class="menu-card-content">
+                                <h3>Punto Blanco</h3>
+                                <p>Queso, tomate, lechuga, huevo, ketchup y alioli.</p>
+                                <span class="allergens">Alérgenos: gluten, huevo, lácteos</span>
+                            </div>
                             <div class="price">4,90 €</div>
-                            <h3>Punto Blanco</h3>
-                            <p>Queso, tomate, lechuga, huevo, ketchup y alioli.</p>
                         </article>
 
                         <article class="menu-card" data-category="hamburguesas">
+                            <div class="menu-card-content">
+                                <h3>Super Full</h3>
+                                <p>Queso, jamón, bacon, cebolla frita, pollo, tomate, lechuga, huevo, ketchup y alioli.</p>
+                                <span class="allergens">Alérgenos: gluten, huevo, lácteos</span>
+                            </div>
                             <div class="price">6,30 €</div>
-                            <h3>Super Full</h3>
-                            <p>Queso, jamón, bacon, cebolla frita, pollo, tomate, lechuga, huevo, ketchup y alioli.</p>
                         </article>
 
                         <article class="menu-card" data-category="hamburguesas">
+                            <div class="menu-card-content">
+                                <h3>Pollo Crujiente</h3>
+                                <p>Pechuga empanada, doble queso, lechuga, tomate, cebolla frita y salsa especial.</p>
+                                <span class="allergens">Alérgenos: gluten, huevo, lácteos</span>
+                            </div>
                             <div class="price">5,90 €</div>
-                            <h3>Pollo Crujiente</h3>
-                            <p>Pechuga empanada, doble queso, lechuga, tomate, cebolla frita y salsa especial.</p>
                         </article>
 
                         <article class="menu-card" data-category="hamburguesas">
+                            <div class="menu-card-content">
+                                <h3>Catastrofica</h3>
+                                <p>Pechuga de pollo empanada, queso, jamón, bacon, cebolla frita, pollo, tomate, lechuga, huevo, ketchup y alioli.</p>
+                                <span class="allergens">Alérgenos: gluten, huevo, lácteos</span>
+                            </div>
                             <div class="price">7,50 €</div>
-                            <h3>Catastrofica</h3>
-                            <p>Pechuga de pollo empanada, queso, jamón, bacon, cebolla frita, pollo, tomate, lechuga, huevo, ketchup y alioli.</p>
                         </article>
                     </div>
                 </div>
@@ -235,21 +267,30 @@
                     <h3 id="sandwiches" class="category-title">Sandwiches</h3>
                     <div class="menu-grid">
                         <article class="menu-card" data-category="sandwiches">
+                            <div class="menu-card-content">
+                                <h3>Punto Blanco</h3>
+                                <p>Jamón, queso, tomate, lechuga, huevo, piña y alioli.</p>
+                                <span class="allergens">Alérgenos: gluten, huevo, lácteos</span>
+                            </div>
                             <div class="price">4,50 €</div>
-                            <h3>Punto Blanco</h3>
-                            <p>Jamón, queso, tomate, lechuga, huevo, piña y alioli.</p>
                         </article>
 
                         <article class="menu-card" data-category="sandwiches">
+                            <div class="menu-card-content">
+                                <h3>Super Lokito</h3>
+                                <p>Jamón, queso, pollo desmenuzado, lomo, huevo, piña, tomate, lechuga, alioli y papas fritas.</p>
+                                <span class="allergens">Alérgenos: gluten, huevo, lácteos</span>
+                            </div>
                             <div class="price">8,20 €</div>
-                            <h3>Super Lokito</h3>
-                            <p>Jamón, queso, pollo desmenuzado, lomo, huevo, piña, tomate, lechuga, alioli y papas fritas.</p>
                         </article>
 
                         <article class="menu-card" data-category="sandwiches">
+                            <div class="menu-card-content">
+                                <h3>Club/Triple</h3>
+                                <p>Jamón, queso, tomate, lechuga, lomo, huevo y alioli.</p>
+                                <span class="allergens">Alérgenos: gluten, huevo, lácteos</span>
+                            </div>
                             <div class="price">6,00 €</div>
-                            <h3>Club/Triple</h3>
-                            <p>Jamón, queso, tomate, lechuga, lomo, huevo y alioli.</p>
                         </article>
                     </div>
                 </div>
@@ -258,21 +299,30 @@
                     <h3 id="bocadillos" class="category-title">Bocadillos</h3>
                     <div class="menu-grid">
                         <article class="menu-card" data-category="bocadillos">
+                            <div class="menu-card-content">
+                                <h3>Punto Blanco</h3>
+                                <p>Pollo desmenuzado, lomo, bacon, queso, tomate, lechuga y alioli.</p>
+                                <span class="allergens">Alérgenos: gluten, huevo, lácteos</span>
+                            </div>
                             <div class="price">5,20 €</div>
-                            <h3>Punto Blanco</h3>
-                            <p>Pollo desmenuzado, lomo, bacon, queso, tomate, lechuga y alioli.</p>
                         </article>
 
                         <article class="menu-card" data-category="bocadillos">
+                            <div class="menu-card-content">
+                                <h3>Lomo Especial</h3>
+                                <p>Lomo, tomate, lechuga, huevo, queso y alioli.</p>
+                                <span class="allergens">Alérgenos: gluten, huevo, lácteos</span>
+                            </div>
                             <div class="price">4,50 €</div>
-                            <h3>Lomo Especial</h3>
-                            <p>Lomo, tomate, lechuga, huevo, queso y alioli.</p>
                         </article>
 
                         <article class="menu-card" data-category="bocadillos">
+                            <div class="menu-card-content">
+                                <h3>Mechada Queso</h3>
+                                <p>Carne mechada, queso y alioli.</p>
+                                <span class="allergens">Alérgenos: gluten, lácteos</span>
+                            </div>
                             <div class="price">4,50 €</div>
-                            <h3>Mechada Queso</h3>
-                            <p>Carne mechada, queso y alioli.</p>
                         </article>
                     </div>
                 </div>
@@ -281,15 +331,21 @@
                     <h3 id="platos" class="category-title">Platos combinados</h3>
                     <div class="menu-grid">
                         <article class="menu-card" data-category="platos">
+                            <div class="menu-card-content">
+                                <h3>Nº5</h3>
+                                <p>Pechuga de pollo, ensalada y papas fritas.</p>
+                                <span class="allergens">Alérgenos: huevo</span>
+                            </div>
                             <div class="price">8,50 €</div>
-                            <h3>Nº5</h3>
-                            <p>Pechuga de pollo, ensalada y papas fritas.</p>
                         </article>
 
                         <article class="menu-card" data-category="platos">
+                            <div class="menu-card-content">
+                                <h3>Nº6</h3>
+                                <p>Dos carnes de hamburguesas, dos huevos fritos, ensalada y papas fritas.</p>
+                                <span class="allergens">Alérgenos: gluten, huevo</span>
+                            </div>
                             <div class="price">8,10 €</div>
-                            <h3>Nº6</h3>
-                            <p>Dos carnes de hamburguesas, dos huevos fritos, ensalada y papas fritas.</p>
                         </article>
                     </div>
                 </div>
@@ -298,15 +354,21 @@
                     <h3 id="postres" class="category-title">Postres</h3>
                     <div class="menu-grid">
                         <article class="menu-card" data-category="postres">
+                            <div class="menu-card-content">
+                                <h3>Banana Split</h3>
+                                <p>Postre clásico para compartir.</p>
+                                <span class="allergens">Alérgenos: lácteos</span>
+                            </div>
                             <div class="price">5,90 €</div>
-                            <h3>Banana Split</h3>
-                            <p>Postre clásico para compartir.</p>
                         </article>
 
                         <article class="menu-card" data-category="postres">
+                            <div class="menu-card-content">
+                                <h3>Dama Blanca</h3>
+                                <p>Un dulce tradicional con un toque especial.</p>
+                                <span class="allergens">Alérgenos: lácteos</span>
+                            </div>
                             <div class="price">5,90 €</div>
-                            <h3>Dama Blanca</h3>
-                            <p>Un dulce tradicional con un toque especial.</p>
                         </article>
                     </div>
                 </div>
@@ -382,6 +444,46 @@
                 drawer.setAttribute('aria-hidden', true);
                 btn.setAttribute('aria-expanded','false');
             }));
+        })();
+
+        (function(){
+            const tabLinks = document.querySelectorAll('.category-nav a');
+            const categories = document.querySelectorAll('.menu-category');
+
+            if(!tabLinks.length || !categories.length) return;
+
+            function activateCategory(categoryId){
+                let found = false;
+                categories.forEach(section => {
+                    const heading = section.querySelector('.category-title');
+                    const isMatch = heading?.id === categoryId;
+                    section.classList.toggle('active', isMatch);
+                    if(isMatch) found = true;
+                });
+                if(!found){
+                    categories.forEach(section => {
+                        const heading = section.querySelector('.category-title');
+                        section.classList.toggle('active', heading?.id === 'tapas');
+                    });
+                }
+                tabLinks.forEach(link => {
+                    const target = link.getAttribute('href')?.replace('#','');
+                    link.classList.toggle('active', target === categoryId);
+                });
+            }
+
+            tabLinks.forEach(link => {
+                const target = link.getAttribute('href')?.replace('#','');
+                if(!target) return;
+                link.addEventListener('click', event => {
+                    event.preventDefault();
+                    activateCategory(target);
+                    history.replaceState(null, '', '#'+target);
+                });
+            });
+
+            const initialHash = window.location.hash.replace('#','') || 'tapas';
+            activateCategory(initialHash);
         })();
     </script>
 </body>
