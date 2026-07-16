@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Bar Cafetería Punto Blanco — cocina casera, desayunos y postres en Icod de los Vinos. Ambiente familiar y atención cuidada.">
+    <title>Bar Cafetería Punto Blanco</title>
+    <!-- estilos embebidos (mobile-first) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root{
+            /* Black & Red palette */
+            --bg: #000000;
+            --surface: #0b0b0b;
+            --card: #0f0f0f;
+            --text: #ffffff;
+            --muted: #d1c7c5;
+            --accent: #c62828;
+            --accent-2: #8e0f0f;
+            --accent-3: #ff5252;
+            --white: #ffffff;
+            --radius:14px;
+            --shadow: 0 8px 30px rgba(0,0,0,0.6);
+            --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.6);
+        }
+
+        *{box-sizing:border-box}
+        html{scroll-behavior:smooth}
+        body{
+            margin:0; 
+            font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            background:var(--bg);
+            color:var(--text);
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+            line-height:1.5;
+        }
+
+        a{color:inherit}
+
+        .container{max-width:420px;margin:0 auto;padding:0 18px}
+
+        /* Header */
+        .topbar{padding:12px 0}
+        .brand{font-family:'Playfair Display', Georgia, serif;font-size:1.35rem;color:var(--accent-2);font-weight:700}
+        nav{display:flex;justify-content:space-between;align-items:center}
+        .nav-links{display:flex;gap:18px}
+        .nav-links a{font-weight:600;color:var(--muted);padding:8px;border-radius:8px}
+        .nav-links a:hover, .nav-links a:focus{background:var(--glass);outline:none}
+
+        /* Hero */
+        .hero{
+            min-height: 60vh;
+            background:
+                linear-gradient(90deg, rgba(20, 12, 8, 0.86), rgba(20, 12, 8, 0.65)),
+                url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=80') center/cover;
+            color: var(--white);
+            display: flex;align-items: center;padding:42px 0;border-bottom:1px solid rgba(255,255,255,0.04);
+        }
+        .hero-inner{display:flex;align-items:center;gap:20px}
+        .hero-copy{max-width:100%}
+        .eyebrow{display:inline-block;color:var(--accent);text-transform:uppercase;letter-spacing:0.12em;font-weight:700;font-size:0.72rem;margin-bottom:10px}
+            .section-heading::after{content:"";display:block;width:64px;height:4px;background:var(--accent);margin:14px auto;border-radius:4px}
+            .section-heading h2{color:var(--accent)}
+            .menu-card h3{color:var(--accent)}
+            .contact-card h3.visit{color:var(--accent)}
+            .icon{display:inline-block;width:20px;text-align:center;margin-right:8px}
+        h1{font-family:'Playfair Display', serif;font-size:clamp(1.8rem,4vw,3rem);margin:0 0 14px}
+        .lead{font-size:1.05rem;opacity:0.95;margin-bottom:18px}
+        .actions{display:flex;gap:12px}
+        .btn{padding:10px 16px;border-radius:999px;font-weight:700;cursor:pointer;border:none}
+        .btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent-3));color:var(--white)}
+        .btn-ghost{background:rgba(255,255,255,0.18);color:#fff}
+
+        /* Sections */
+        .section{padding:36px 0}
+        .section-heading{text-align:center;margin-bottom:36px}
+        .section-heading h2{font-family:'Playfair Display', serif;font-size:1.6rem;margin:6px 0}
+        .section-heading p{max-width:760px;margin:0 auto;color:var(--muted)}
+
+        /* Menu grid */
+        .menu-tabs{display:none}
+        .tab-btn{background:transparent;border:1px solid rgba(66,48,42,0.08);padding:8px 14px;border-radius:999px;font-weight:600;color:var(--muted)}
+        .tab-btn.active{background:var(--accent-2);color:var(--white);border-color:transparent;box-shadow:var(--shadow-lg)}
+
+        .menu-grid{display:grid;grid-template-columns:1fr;gap:14px}
+        .menu-card{background:var(--card);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);position:relative;border:1px solid rgba(66,48,42,0.04)}
+        .menu-card h3{margin:0 0 8px;font-size:1.05rem}
+        .menu-card p{margin:0;color:var(--muted)}
+        .price{position:absolute;top:14px;right:14px;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:var(--white);padding:8px 12px;border-radius:999px;font-weight:800}
+
+        /* About & Contact */
+        .about{display:grid;grid-template-columns:1fr;gap:18px;align-items:center}
+        .about img{width:100%;height:100%;object-fit:cover;border-radius:12px}
+        .contact-grid{display:grid;grid-template-columns:1fr;gap:12px}
+        .contact-card{background:linear-gradient(135deg,var(--accent-2),var(--accent));color:#fff;padding:20px;border-radius:12px}
+
+        footer{padding:18px 0;background:var(--surface);margin-top:30px}
+        .footer-inner{display:flex;flex-direction:column;align-items:center;gap:8px}
+        .small{font-size:0.86rem;color:var(--muted)}
+
+        @media (max-width:900px){.menu-grid{grid-template-columns:1fr}.about{grid-template-columns:1fr}.hero-inner{flex-direction:column;align-items:flex-start}}
+        @media (max-width:640px){.nav-links{display:none}.container{padding:0 16px}.menu-grid{grid-template-columns:1fr}}
+        @media (min-width:800px){
+            .container{max-width:980px}
+            .nav-links{display:flex}
+            .menu-toggle{display:none}
+            .nav-drawer{display:none}
+            .menu-grid{grid-template-columns:repeat(2,1fr)}
+            .about{grid-template-columns:1fr 1fr}
+            .contact-grid{grid-template-columns:1fr 1fr}
+            footer{padding:26px 0}
+        }
+    </style>
+</head>
+<body>
+    <a href="#maincontent" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;" class="skip">Saltar al contenido</a>
+    <header class="container topbar">
+        <nav aria-label="Navegación principal">
+            <div class="brand">Punto Blanco</div>
+            <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+            <div class="nav-links" role="navigation" aria-label="Enlaces principales">
+                <a href="#inicio">Inicio</a>
+                <a href="#carta">Carta</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+            <div class="nav-drawer" role="navigation" aria-hidden="true">
+                <a href="#inicio">Inicio</a>
+                <a href="#carta">Carta</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+        </nav>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="container hero-inner">
+            <div class="hero-copy">
+                <span class="eyebrow">Bar · Cafetería · Icod de los Vinos</span>
+                <h1>Sabores de siempre, cuidados con excelencia</h1>
+                <p class="lead">Desayunos caseros, platos tradicionales y postres elaborados con ingredientes seleccionados. Atención cercana y ambiente acogedor para cualquier ocasión.</p>
+                <div class="actions">
+                    <a class="btn btn-primary" href="#carta">Ver carta</a>
+                    <a class="btn btn-ghost" href="#contacto">Reservas / Contacto</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main id="maincontent">
+        <section id="carta" class="section">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="eyebrow">Nuestra selección</span>
+                    <h2>Carta destacada</h2>
+                    <p>Platos y elaboraciones tradicionales, elaboradas con cariño y consistencia. Ofrecemos opciones para desayuno, comida y postre.</p>
+                </div>
+
+                <!-- Menu organized by category -->
+                <div class="menu-category">
+                    <h3 class="category-title">Tapas</h3>
+                    <div class="menu-grid">
+                        <article class="menu-card" data-category="tapas">
+                            <div class="price">6,70 €</div>
+                            <h3>Papas locas</h3>
+                            <p>Con 3 salsas, jamón, queso y pollo desmenuzado.</p>
+                        </article>
+
+                        <article class="menu-card" data-category="tapas">
+                            <div class="price">6,80 €</div>
+                            <h3>Tequeños</h3>
+                            <p>6 unidades.</p>
+                        </article>
+
+                        <article class="menu-card" data-category="tapas">
+                            <div class="price">6,80 €</div>
+                            <h3>Croquetas</h3>
+                            <p>8 unidades.</p>
+                        </article>
+
+                        <article class="menu-card" data-category="tapas">
+                            <div class="price">6,80 €</div>
+                            <h3>Queso asado</h3>
+                            <p>Con mojos y arándanos.</p>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="menu-category">
+                    <h3 class="category-title">Hamburguesas</h3>
+                    <div class="menu-grid">
+                        <article class="menu-card" data-category="hamburguesas">
+                            <div class="price">4,90 €</div>
+                            <h3>Punto Blanco</h3>
+                            <p>Queso, tomate, lechuga, huevo, ketchup y alioli.</p>
+                        </article>
+
+                        <article class="menu-card" data-category="hamburguesas">
+                            <div class="price">6,30 €</div>
+                            <h3>Super Full</h3>
+                            <p>Queso, jamón, bacon, cebolla frita, pollo, tomate, lechuga, huevo, ketchup y alioli.</p>
+                        </article>
+
+                        <article class="menu-card" data-category="hamburguesas">
+                            <div class="price">5,90 €</div>
+                            <h3>Pollo Crujiente</h3>
+                            <p>Pechuga empanada, doble queso, lechuga, tomate, cebolla frita y salsa especial.</p>
+                        </article>
+
+                        <article class="menu-card" data-category="hamburguesas">
+                            <div class="price">7,50 €</div>
+                            <h3>Catastrofica</h3>
+                            <p>Pechuga de pollo empanada, queso, jamón, bacon, cebolla frita, pollo, tomate, lechuga, huevo, ketchup y alioli.</p>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="menu-category">
+                    <h3 class="category-title">Sandwiches</h3>
+                    <div class="menu-grid">
+                        <article class="menu-card" data-category="sandwiches">
+                            <div class="price">4,50 €</div>
+                            <h3>Punto Blanco</h3>
+                            <p>Jamón, queso, tomate, lechuga, huevo, piña y alioli.</p>
+                        </article>
+
+                        <article class="menu-card" data-category="sandwiches">
+                            <div class="price">8,20 €</div>
+                            <h3>Super Lokito</h3>
+                            <p>Jamón, queso, pollo desmenuzado, lomo, huevo, piña, tomate, lechuga, alioli y papas fritas.</p>
+                        </article>
+
+                        <article class="menu-card" data-category="sandwiches">
+                            <div class="price">6,00 €</div>
+                            <h3>Club/Triple</h3>
+                            <p>Jamón, queso, tomate, lechuga, lomo, huevo y alioli.</p>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="menu-category">
+                    <h3 class="category-title">Bocadillos</h3>
+                    <div class="menu-grid">
+                        <article class="menu-card" data-category="bocadillos">
+                            <div class="price">5,20 €</div>
+                            <h3>Punto Blanco</h3>
+                            <p>Pollo desmenuzado, lomo, bacon, queso, tomate, lechuga y alioli.</p>
+                        </article>
+
+                        <article class="menu-card" data-category="bocadillos">
+                            <div class="price">4,50 €</div>
+                            <h3>Lomo Especial</h3>
+                            <p>Lomo, tomate, lechuga, huevo, queso y alioli.</p>
+                        </article>
+
+                        <article class="menu-card" data-category="bocadillos">
+                            <div class="price">4,50 €</div>
+                            <h3>Mechada Queso</h3>
+                            <p>Carne mechada, queso y alioli.</p>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="menu-category">
+                    <h3 class="category-title">Platos combinados</h3>
+                    <div class="menu-grid">
+                        <article class="menu-card" data-category="platos">
+                            <div class="price">8,50 €</div>
+                            <h3>Nº5</h3>
+                            <p>Pechuga de pollo, ensalada y papas fritas.</p>
+                        </article>
+
+                        <article class="menu-card" data-category="platos">
+                            <div class="price">8,10 €</div>
+                            <h3>Nº6</h3>
+                            <p>Dos carnes de hamburguesas, dos huevos fritos, ensalada y papas fritas.</p>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="menu-category">
+                    <h3 class="category-title">Postres</h3>
+                    <div class="menu-grid">
+                        <article class="menu-card" data-category="postres">
+                            <div class="price">5,90 €</div>
+                            <h3>Banana Split</h3>
+                            <p>Postre clásico para compartir.</p>
+                        </article>
+
+                        <article class="menu-card" data-category="postres">
+                            <div class="price">5,90 €</div>
+                            <h3>Dama Blanca</h3>
+                            <p>Un dulce tradicional con un toque especial.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="nosotros" class="section">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="eyebrow">Quiénes somos</span>
+                    <h2>Un espacio cercano con cocina honesta</h2>
+                </div>
+
+                <div class="about">
+                    <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=1200&q=80" alt="Interior acogedor del restaurante">
+                    <div>
+                        <p>Nuestro compromiso es ofrecer platos tradicionales, preparados con técnicas sencillas y materias primas seleccionadas. Buscamos crear experiencias memorables en un ambiente relajado y familiar.</p>
+                        <p>Perfecto para desayunos, comidas familiares y encuentros con amigos. Si tienes alguna necesidad alimentaria, consúltanos y estaremos encantados de ayudarte.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="section">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="eyebrow">Contacto</span>
+                    <h2>Horario y cómo encontrarnos</h2>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <h3>Información</h3>
+                        <p><strong>Dirección:</strong> Prolongación Centinela, 1, Icod de los Vinos</p>
+                        <p><strong>Teléfono:</strong> <a href="tel:+34922122094" style="color:inherit;">+34 922 12 20 94</a></p>
+                        <p><strong>Horario:</strong> L - D: 08:00 — 22:00</p>
+                        <div style="margin-top:12px">
+                            <a class="btn btn-primary" href="tel:+34922122094">Llamar</a>
+                            <a class="btn" href="https://www.google.com/maps" target="_blank" rel="noopener">Cómo llegar</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-card" style="background:linear-gradient(180deg,#5a2f1f,#7a452b);">
+                            <h3 class="visit">Visítanos</h3>
+                            <p><span class="icon">📍</span>Te esperamos con recetas caseras, café de calidad y un trato cercano.</p>
+                            <p><span class="icon">📞</span>Reservas disponibles por teléfono.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-inner">
+            <div class="small">© Punto Blanco — Icod de los Vinos</div>
+            <div class="small">Diseño y atención al cliente</div>
+        </div>
+    </footer>
+
+    <script>
+        (function(){
+            const btn = document.querySelector('.menu-toggle');
+            const drawer = document.querySelector('.nav-drawer');
+            if(!btn || !drawer) return;
+            btn.setAttribute('aria-expanded','false');
+            btn.addEventListener('click', ()=>{
+                const open = document.body.classList.toggle('nav-open');
+                drawer.setAttribute('aria-hidden', !open);
+                btn.setAttribute('aria-expanded', String(!!open));
+            });
+            drawer.querySelectorAll('a').forEach(a=> a.addEventListener('click', ()=>{
+                document.body.classList.remove('nav-open');
+                drawer.setAttribute('aria-hidden', true);
+                btn.setAttribute('aria-expanded','false');
+            }));
+        })();
+    </script>
+</body>
+</html>
