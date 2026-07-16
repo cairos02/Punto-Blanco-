@@ -44,7 +44,7 @@
 
         /* Header */
         .topbar{padding:12px 0}
-        .brand{font-family:'Playfair Display', Georgia, serif;font-size:1.35rem;color:var(--accent-2);font-weight:700}
+        .brand{font-family:'Playfair Display', Georgia, serif;font-size:1.35rem;color:var(--accent-2);font-weight:700;display:inline-block}
         nav{display:flex;justify-content:space-between;align-items:center}
         .nav-links{display:flex;gap:18px}
         .nav-links a{font-weight:600;color:var(--muted);padding:8px;border-radius:8px}
@@ -79,6 +79,10 @@
         .section-heading{text-align:center;margin-bottom:36px}
         .section-heading h2{font-family:'Playfair Display', serif;font-size:1.6rem;margin:6px 0}
         .section-heading p{max-width:760px;margin:0 auto;color:var(--muted)}
+        .category-nav{display:flex;gap:10px;overflow:auto;padding:10px 6px;margin:12px 0 18px}
+        .category-nav a{flex:0 0 auto;background:linear-gradient(135deg,var(--accent),var(--accent-2));border:1px solid transparent;color:var(--white);padding:10px 16px;border-radius:999px;font-weight:700;white-space:nowrap;box-shadow:var(--shadow)}
+        .category-nav a:focus,.category-nav a:hover{filter:brightness(0.94);outline:none}
+        .category-nav a.active{background:var(--accent-2);box-shadow:var(--shadow-lg)}
 
         /* Menu grid */
         .menu-tabs{display:none}
@@ -159,9 +163,18 @@
                     <p>Platos y elaboraciones tradicionales, elaboradas con cariño y consistencia. Ofrecemos opciones para desayuno, comida y postre.</p>
                 </div>
 
+                <nav class="category-nav" aria-label="Navegación de categorías">
+                    <a href="#tapas">Tapas</a>
+                    <a href="#hamburguesas">Hamburguesas</a>
+                    <a href="#sandwiches">Sandwiches</a>
+                    <a href="#bocadillos">Bocadillos</a>
+                    <a href="#platos">Platos</a>
+                    <a href="#postres">Postres</a>
+                </nav>
+
                 <!-- Menu organized by category -->
                 <div class="menu-category">
-                    <h3 class="category-title">Tapas</h3>
+                    <h3 id="tapas" class="category-title">Tapas</h3>
                     <div class="menu-grid">
                         <article class="menu-card" data-category="tapas">
                             <div class="price">6,70 €</div>
@@ -190,7 +203,7 @@
                 </div>
 
                 <div class="menu-category">
-                    <h3 class="category-title">Hamburguesas</h3>
+                    <h3 id="hamburguesas" class="category-title">Hamburguesas</h3>
                     <div class="menu-grid">
                         <article class="menu-card" data-category="hamburguesas">
                             <div class="price">4,90 €</div>
@@ -219,7 +232,7 @@
                 </div>
 
                 <div class="menu-category">
-                    <h3 class="category-title">Sandwiches</h3>
+                    <h3 id="sandwiches" class="category-title">Sandwiches</h3>
                     <div class="menu-grid">
                         <article class="menu-card" data-category="sandwiches">
                             <div class="price">4,50 €</div>
@@ -242,7 +255,7 @@
                 </div>
 
                 <div class="menu-category">
-                    <h3 class="category-title">Bocadillos</h3>
+                    <h3 id="bocadillos" class="category-title">Bocadillos</h3>
                     <div class="menu-grid">
                         <article class="menu-card" data-category="bocadillos">
                             <div class="price">5,20 €</div>
@@ -265,7 +278,7 @@
                 </div>
 
                 <div class="menu-category">
-                    <h3 class="category-title">Platos combinados</h3>
+                    <h3 id="platos" class="category-title">Platos combinados</h3>
                     <div class="menu-grid">
                         <article class="menu-card" data-category="platos">
                             <div class="price">8,50 €</div>
@@ -282,7 +295,7 @@
                 </div>
 
                 <div class="menu-category">
-                    <h3 class="category-title">Postres</h3>
+                    <h3 id="postres" class="category-title">Postres</h3>
                     <div class="menu-grid">
                         <article class="menu-card" data-category="postres">
                             <div class="price">5,90 €</div>
@@ -329,7 +342,7 @@
                         <h3>Información</h3>
                         <p><strong>Dirección:</strong> Prolongación Centinela, 1, Icod de los Vinos</p>
                         <p><strong>Teléfono:</strong> <a href="tel:+34922122094" style="color:inherit;">+34 922 12 20 94</a></p>
-                        <p><strong>Horario:</strong> L - D: 08:00 — 22:00</p>
+                        <p><strong>Horario:</strong> M - D: 08:00 — 22:00</p>
                         <div style="margin-top:12px">
                             <a class="btn btn-primary" href="tel:+34922122094">Llamar</a>
                             <a class="btn" href="https://www.google.com/maps" target="_blank" rel="noopener">Cómo llegar</a>
